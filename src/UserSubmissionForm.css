@@ -1,0 +1,21 @@
+label{
+    font-size: 25px;
+    font-family: "Roboto";
+    font-weight: 500;
+    margin: 10px;
+}
+input{
+    width: 90%;
+    height: 20px;
+    border: 2px solid #99a7b3;
+    padding: 5px;
+    margin: 10px;
+}
+button{
+    background-color: #3d14f3;
+    color: #fff;
+    padding: 6px;
+    border-radius: 5px;
+    border-width: 0px;
+    margin: 9px;
+}

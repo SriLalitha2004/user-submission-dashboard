@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { useState } from 'react';
+import UserSubmissionForm from './UserSubmissionForm';
+import AdminDashboard from './AdminDashboard';
+import './App.css'
 
-function App() {
+const App = () => {
+  const [submissions, setSubmissions] = useState([]);
+
+  const handleNewSubmission = (submission) => {
+    setSubmissions([...submissions, submission]);  // Store submissions in state
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1 className="h1">User Submission Form</h1>
+      <UserSubmissionForm onSubmit={handleNewSubmission} />
+      <AdminDashboard submissions={submissions} />
     </div>
   );
-}
+};
 
 export default App;
